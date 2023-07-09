@@ -14,24 +14,26 @@ const Header = () => {
       .catch((err) => console.error(err.message));
   }, []);
 
-  const API_URL =
-    "http://api.exchangeratesapi.io/v1/latest?access_key=c46953a39648e87cac23a859c6b2a349";
+  // const [currency, setCurrency] = useState([]);
+  // const API_URL =
+  //   "http://api.exchangeratesapi.io/v1/latest?access_key=c46953a39648e87cac23a859c6b2a349";
 
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) =>
-        console.log(Math.floor(data.rates.UZS / data.rates.USD) || data.rates.E)
-      )
-      .catch((err) => console.error(err.message));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     API_URL
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setCurrency(data.rates))
+  //     .catch((err) => console.log(err.message));
+  // }, []);
+  // console.log(currency);
 
   const [isClick, setIsClick] = useState(false);
   const handleClick = () => {
     setIsClick(true);
   };
 
-  const [language, setLanguage] = useState("O'z");
+  const [language, setLanguage] = useState("Uz");
 
   const [isOpen, setIsOpen] = useState(false);
   const handleLanguageChange = (selectedLanguage) => {
@@ -59,12 +61,18 @@ const Header = () => {
                 <ul className="site-header__nav--list">
                   <li className="site-header__nav--item">
                     <p className="site-header__nav--currency">USD</p>
-                    <p className="site-header__currency-value">11 395.73</p>
-                    <p className="site-header__currency-change">-8.92</p>
+                    <p className="site-header__currency-value">
+                      
+                    </p>
+                    <p className="site-header__currency-change">
+                    
+                    </p>
                   </li>
                   <li className="site-header__nav--item">
                     <p className="site-header__nav--currency">EUR</p>
-                    <p className="site-header__currency-value">12 365.51</p>
+                    <p className="site-header__currency-value">
+                     
+                    </p>
                     <p className="site-header__currency-change">-46.17</p>
                   </li>
                   <li className="site-header__nav--item">
@@ -250,9 +258,9 @@ const Header = () => {
                         <Link
                           className="site-header__dropdown-item"
                           to="/home/uz"
-                          onClick={() => handleLanguageChange("O'z")}
+                          onClick={() => handleLanguageChange("Uz")}
                         >
-                          O'z
+                          Uz
                         </Link>
                       </li>
                       <li>
